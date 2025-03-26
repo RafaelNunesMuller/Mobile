@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, ImageBackground, TextInput, Button} from 'react-native';
 
 
-export default function Logi(){
+export default function Login(){
     return(
         <View style={styles.container}>
             <ImageBackground style={{flex:1, width:'100%', height:'100%'}} source={require('../assets/troia.jpg')}>
@@ -19,7 +19,7 @@ export default function Logi(){
                 />
 
                 <Button
-                    title='Botão'
+                    title='Login'
                 />
                
             </ImageBackground>
