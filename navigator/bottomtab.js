@@ -6,7 +6,7 @@ import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom
 import Home from './screen/screen';
 import Login from './screen/login';
 
-export default function App() {
+export default function BottomTabBar() {
   const BottomTabBar = createBottomTabNavigator();
   return (
 
