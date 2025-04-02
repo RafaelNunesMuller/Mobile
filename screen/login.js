@@ -19,7 +19,7 @@ export default function Login({navigation}){
 
                 <Button
                     title='Login'
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('Hometab')}
                 />
                
             </ImageBackground>
