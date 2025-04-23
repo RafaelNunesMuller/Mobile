@@ -9,6 +9,7 @@ import Home from './screen/screen';
 import Login from './screen/login';
 import Feed from './screen/feed';
 import Counter from './screen/counter';
+import product from './screen/products';
 function BottomTabBar(){
   const BottomTabBar = createBottomTabNavigator();
   return(
@@ -31,6 +32,11 @@ screenOptions={{
   },
 }}
 >
+  <BottomTabBar.Screen name='product' component={product} options={{
+    tabBarIcon:() => (
+      <MaterialIcons name="shopping-cart" size={40} color="white" />
+    )
+  }}/>
 
   <BottomTabBar.Screen name='Home' component={Home} options={{
     tabBarIcon:() => (
@@ -49,6 +55,8 @@ screenOptions={{
       <MaterialIcons name="123" size={40} color="white" />
     )
   }}/>
+
+
 
 </BottomTabBar.Navigator>
   )

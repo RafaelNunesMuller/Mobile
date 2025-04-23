@@ -1,10 +1,12 @@
 import { StyleSheet, View, Text,TouchableOpacity, TextInput } from "react-native";
-import { useState } from "react";
+import { use, useState } from "react";
 
 
 
 export default function Counter(){
     const [contador, setContador] = useState(0)
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
     function Aumentar (){
         setContador(contador+1)
     }
@@ -16,7 +18,6 @@ export default function Counter(){
     }
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>contador</Text>
             <Text style={styles.title}>Contador: {contador} </Text>
 
             <View style={styles.btn}>
@@ -36,16 +37,18 @@ export default function Counter(){
             <TextInput
                 placeholder='nome'
                 style={styles.input}
-                
+                value={nome}
+                onChangeText={setNome}
             />
                         
             <TextInput
-                placeholder='numero'
+                placeholder='email'
                 style={styles.input}
-                
+                value={email}
+                onChangeText={setEmail}
             />
             </View>
-            
+            <Text>oi, {nome}, seu email é {email}</Text>
              
         </View>
 )}
@@ -81,7 +84,7 @@ const styles = StyleSheet.create({
     input:{
         width: 240,
         height: 'auto',
-        alignSelf:'center',
+        alignContent:'center',
         backgroundColor:'white',
         justifyContent:'center'
     },
