@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         margin:10,
         flexDirection:'row',
         backgroundColor:'#f4f4',
-        borderRadius:8
+        borderRadius:8,
     },
   
     img:{
