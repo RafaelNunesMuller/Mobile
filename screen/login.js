@@ -1,6 +1,20 @@
 import {Text, View, StyleSheet, ImageBackground, TextInput, Button} from 'react-native';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
+import { auth } from '../controller';
 
 export default function Login({navigation}){
+
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+
+    const Verificator = () =>{
+        signInWithEmailAndPassword(auth, email, senha).then(userCredential => {console.log('usuario logado', userCredential.user.email);
+
+        })
+        .catch((error) => {console.log('erro ao logar', error.message)})
+    }
+
     return(
         <View style={styles.container}>
             <ImageBackground style={{flex:1, width:'100%', height:'100%'}} source={require('../assets/troia.jpg')}>
@@ -9,17 +23,31 @@ export default function Login({navigation}){
            
                 <TextInput
                      style={styles.barra}
-                     placeholder='nome'
+                     placeholder='email'
+                     value={email}
+                    onChangeText={setEmail}
                 />
         
                 <TextInput
                     style={styles.barra}
-                    placeholder='numero'
+                    placeholder='senha'
+                    value={senha}
+                    onChangeText={setSenha}
+                    secureTextEntry={true}
                 />
 
                 <Button
+                    style={styles.btn}
                     title='Login'
-                    onPress={() => navigation.navigate('Hometab')}
+                    onPress={Verificator}
+                />
+
+                <Button
+                style={styles.btn}
+                color={'#FF007F'}
+                title="Cadastrar-se"
+                onPress={() => navigation.navigate('Cadastro')}
+                
                 />
                
             </ImageBackground>
@@ -30,20 +58,28 @@ export default function Login({navigation}){
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:"#000",
+        padding:3,
     },
 
     texto:{
-        flex:3,
         textAlign:'center',
         color:'white',
     },
 
     barra:{
-        flex:1,
         width: 240,
         height: 'auto',
-        margin: 160,
+        margin: 150,
         alignSelf:'center',
         backgroundColor:'white'
+    },
+
+    btn:{
+        width:'30',
+        justifyContent:'center',
+        flexDirection:'column',
+        alignItems:'center',
+        height:'20'
     }
 });

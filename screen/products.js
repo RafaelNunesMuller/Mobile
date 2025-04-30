@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
     text:{
         fontSize:30,
         color: 'red',
-        textAlign:'center'
+        textAlign:'center',
     },
 })

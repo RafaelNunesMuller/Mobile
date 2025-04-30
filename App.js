@@ -10,6 +10,8 @@ import Login from './screen/login';
 import Feed from './screen/feed';
 import Counter from './screen/counter';
 import product from './screen/products';
+import cadastro from './Register';
+
 function BottomTabBar(){
   const BottomTabBar = createBottomTabNavigator();
   return(
@@ -69,6 +71,7 @@ export default function App() {
     <NavigationContainer >
       <Stack.Navigator>
       <Stack.Screen name='Login' component={Login} />
+      <Stack.Screen name='Cadastro' component={cadastro}/>
       <Stack.Screen options={{headerShown:false}} name='Hometab' component={BottomTabBar}/>
       </Stack.Navigator>
     </NavigationContainer>
