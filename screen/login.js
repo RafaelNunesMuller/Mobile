@@ -10,9 +10,11 @@ export default function Login({navigation}){
 
     const Verificator = () =>{
         signInWithEmailAndPassword(auth, email, senha).then(userCredential => {console.log('usuario logado', userCredential.user.email);
+            navigation.navigate('Hometab');
 
         })
         .catch((error) => {console.log('erro ao logar', error.message)})
+        
     }
 
     return(
