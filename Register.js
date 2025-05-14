@@ -1,7 +1,8 @@
-import {View, Text,TextInput, Button, StyleSheet} from "react-native"
+import {View, Text,TextInput, Button, StyleSheet, } from "react-native"
 import {useState} from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./controller";
+import { TouchableOpacity } from "react-native";
 
 export default function cadastro({navigation}){
     const [email, setEmail] = useState("")
@@ -45,13 +46,6 @@ export default function cadastro({navigation}){
             onPress={cadastroUser}
             />
 
-            <Button
-            style={styles.btn}
-            color={'#FF007F'}
-            title="Login"
-            onPress={() => navigation.navigate('Login')}
-            
-            />
         </View>
     );
 }
@@ -61,7 +55,6 @@ const styles = StyleSheet.create({
         flex:1,
         padding:50,
         alignContent:'center',
-        backgroundColor:'gray',
     },
 
     btn:{

@@ -11,6 +11,7 @@ import Feed from './screen/feed';
 import Counter from './screen/counter';
 import product from './screen/products';
 import cadastro from './Register';
+import AddP from './screen/addProc';
 
 function BottomTabBar(){
   const BottomTabBar = createBottomTabNavigator();
@@ -55,6 +56,12 @@ screenOptions={{
   <BottomTabBar.Screen name='Counter' component={Counter} options={{
     tabBarIcon:() => (
       <MaterialIcons name="123" size={40} color="white" />
+    )
+  }}/>
+
+<BottomTabBar.Screen name='addProc' component={AddP} options={{
+    tabBarIcon:() => (
+      <MaterialIcons name="add" size={24} color="white" />
     )
   }}/>
 

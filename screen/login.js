@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, ImageBackground, TextInput, Button} from 'react-native';
+import {Text, View, StyleSheet, ImageBackground, TextInput, Button, TouchableOpacity} from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../controller';
@@ -44,13 +44,17 @@ export default function Login({navigation}){
                     onPress={Verificator}
                 />
 
-                <Button
+{/*                 <Button
                 style={styles.btn}
                 color={'#FF007F'}
                 title="Cadastrar-se"
                 onPress={() => navigation.navigate('Cadastro')}
                 
-                />
+                /> */}
+
+            <TouchableOpacity onPress={() => navigation.navigate('cadastroUser')}>
+                <Text style={styles.txtcadastrar}>Cadastrar</Text>
+            </TouchableOpacity>
                
             </ImageBackground>
         </View>
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:"#000",
-        padding:3,
+        padding:10,
     },
 
     texto:{
@@ -70,18 +74,23 @@ const styles = StyleSheet.create({
     },
 
     barra:{
-        width: 240,
-        height: 'auto',
-        margin: 150,
+        margin:150,
         alignSelf:'center',
-        backgroundColor:'white'
+        backgroundColor:'white',
+        borderWidth:'120',
+        borderColor:'black',
     },
 
     btn:{
-        width:'30',
-        justifyContent:'center',
-        flexDirection:'column',
-        alignItems:'center',
-        height:'20'
-    }
+        alignSelf:'center',
+        backgroundColor:'white',
+        borderWidth:'20',
+        borderColor:'black',
+    },
+
+    txtcadastrar:{
+        fontSize:20,
+        color:'#FF007F',
+        textAlign:'center'
+    },
 });
