@@ -3,9 +3,11 @@ import { View, Text, StyleSheet, FlatList, Image} from "react-native";
 import Card from "../components/cards";
 import { db } from "../controller";
 import { collection, getDocs } from "firebase/firestore";
+import { useCarrinho } from "../components/ProviderCarrinho";
 
-export default function Product(){
+export default function Product({navigation}){
     const [Produtos, setProdutos] = useState([])
+    const {AddP} = useCarrinho();
 
     useEffect(() => {
         async function carregarProdutos() {
@@ -42,6 +44,10 @@ export default function Product(){
                 nome={item.Nome}
                 valor={item.Valor}
                 imagem={item.Imagem}
+                Comprar={() => {
+                    AddP(item);  
+                    navigation.navigate('carrinho');
+                }}
                 />
                 )}
             keyExtractor={item => item.id}

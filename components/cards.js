@@ -1,18 +1,13 @@
-import {View, Text, StyleSheet, Image} from "react-native";
-import product from "../screen/products";
+import {View, Text, StyleSheet, Image, Button} from "react-native";
 
-
-export default function Card({nome, valor, imagem}){
+export default function Card({nome, valor, imagem, Comprar}){
     return(
         <View style={styles.card}>
             <Image style={styles.img} source={{uri: imagem}}/>
             <View>
-                <Text style={styles.products}>
-                {nome}
-                </Text>
-                <Text style={styles.products}>
-                R${valor}
-                </Text>
+                <Text style={styles.products}>{nome}</Text>
+                <Text style={styles.products}>R${valor}</Text>
+                <Button title="Comprar" onPress={Comprar} color={'#f4f4'}/>
             </View>
         </View>
     );
@@ -36,6 +31,6 @@ const styles = StyleSheet.create({
         width:100,
         height:100,
         borderRadius: 8,
-    }
+    },
 
 })

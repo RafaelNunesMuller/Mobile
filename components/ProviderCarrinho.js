@@ -19,3 +19,4 @@ export  function ProviderCarrinho({children}){
 export function useCarrinho(){
     return useContext(CarrinhoContext);
 }
+ 
