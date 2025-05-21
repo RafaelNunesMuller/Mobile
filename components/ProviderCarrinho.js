@@ -2,14 +2,13 @@ import { createContext, useContext, useState } from "react";
 
 const CarrinhoContext = createContext();
 
-export default ProviderCarrinho({children});{
+export  function ProviderCarrinho({children}){
     
     const [carrinho, setCarrinho] = useState([]);
 
     function AddP(Product){
         setCarrinho((anterior) => [...anterior,Product])
     }
-    
     return(
         <CarrinhoContext.Provider value={{carrinho, AddP}}>
             {children}
