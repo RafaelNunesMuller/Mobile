@@ -17,8 +17,8 @@ export default function AddP(){
                 Imagem
             }),
             setNome('');
-            setValor(''),
-            setImagem('')
+            setValor('');
+            setImagem('');
         }
         catch(error){
             console.log('erro no cadastro do produto', error);
@@ -29,7 +29,7 @@ export default function AddP(){
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
 
-            <Text style={styles.text}>Digite o nome valor e o URL da imagem do produto</Text>
+            <Text style={styles.text}>Digite o nome, valor e o URL da imagem do produto</Text>
 
             <TextInput
             style={styles.barra}

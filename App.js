@@ -9,8 +9,8 @@ import Home from './screen/screen';
 import Login from './screen/login';
 import Feed from './screen/feed';
 import Counter from './screen/counter';
-import product from './screen/products';
-import cadastro from './Register';
+import Product from './screen/products';
+import Cadastro from './Register';
 import AddP from './screen/addProc';
 
 function BottomTabBar(){
@@ -35,7 +35,7 @@ screenOptions={{
   },
 }}
 >
-  <BottomTabBar.Screen name='product' component={product} options={{
+  <BottomTabBar.Screen name='product' component={Product} options={{
     tabBarIcon:() => (
       <MaterialIcons name="shopping-cart" size={40} color="white" />
     )
@@ -78,7 +78,7 @@ export default function App() {
     <NavigationContainer >
       <Stack.Navigator>
       <Stack.Screen name='Login' component={Login} />
-      <Stack.Screen name='Cadastro' component={cadastro}/>
+      <Stack.Screen name='Cadastro' component={Cadastro}/>
       <Stack.Screen options={{headerShown:false}} name='Hometab' component={BottomTabBar}/>
       </Stack.Navigator>
     </NavigationContainer>

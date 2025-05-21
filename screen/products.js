@@ -4,7 +4,7 @@ import Card from "../components/cards";
 import { db } from "../controller";
 import { collection, getDocs } from "firebase/firestore";
 
-export default function product(){
+export default function Product(){
     const [Produtos, setProdutos] = useState([])
 
     useEffect(() => {

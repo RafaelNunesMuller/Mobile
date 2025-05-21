@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./controller";
 import { TouchableOpacity } from "react-native";
 
-export default function cadastro({navigation}){
+export default function Cadastro({navigation}){
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
