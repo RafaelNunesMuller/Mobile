@@ -1,9 +1,8 @@
-import { Children, createContext, useContext, useState } from "react";
-import Product from "../screen/products";
+import { createContext, useContext, useState } from "react";
 
 const CarrinhoContext = createContext();
 
-export default ProviderCart(Children){
+export default ProviderCarrinho({children});{
     
     const [carrinho, setCarrinho] = useState([]);
 
@@ -13,7 +12,7 @@ export default ProviderCart(Children){
     
     return(
         <CarrinhoContext.Provider value={{carrinho, AddP}}>
-            {Children}
+            {children}
         </CarrinhoContext.Provider>
     )
 }
